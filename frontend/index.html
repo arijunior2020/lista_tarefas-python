@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas - ARIJR Technology</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 70%;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50; /* Verde */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        button.delete-btn {
+            background-color: #f44336; /* Vermelho */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        button.delete-btn:hover {
+            background-color: #cc0000;
+        }
+
+        /* Estilo específico para o botão "Listar Tarefas" */
+        #listarTarefasBtn {
+            background-color: #6495ED; /* Azul claro */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Tarefas - ARIJR Technology</h1>
+        <!-- Formulário para criar nova tarefa -->
+        <form id="formCriarTarefa">
+            <input type="text" id="descricao" placeholder="Digite a descrição da tarefa" required>
+            <button type="submit">Adicionar Tarefa</button>
+        </form>
+        <!-- Lista de tarefas -->
+        <ul id="tarefas"></ul>
+        <button id="listarTarefasBtn">Listar Tarefas</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

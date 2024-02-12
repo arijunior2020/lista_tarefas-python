@@ -1,0 +1,28 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://lista:lista123@db/lista_tarefa
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d  # Monta o diretório com os scripts SQL na pasta de inicialização do PostgreSQL
+    environment:
+      - POSTGRES_DB=lista_tarefa
+      - POSTGRES_USER=lista
+      - POSTGRES_PASSWORD=lista123
